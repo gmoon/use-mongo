@@ -24,7 +24,6 @@ mkdir -p /scratch/jenkins/mongo/db
 mkdir -p /scratch/jenkins/mongo/log
 chmod 777 /scratch/jenkins/mongo/db
 chmod 777 /scratch/jenkins/mongo/log
-mongod  --smallfiles --dbpath /scratch/jenkins/db --logpath /scratch/jenkins/mongo/log/mongod.log --fork  --nohttpinterface
 
 OUT=$?
 if [ $OUT -ne 0 ];then
