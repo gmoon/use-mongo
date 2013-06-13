@@ -20,6 +20,7 @@ test -f /scratch/jenkins/mongo/${mongo_name}/bin/mongo || tar xzf /scratch/jenki
 export PATH=/scratch/jenkins/mongo/${mongo_name}/bin:$PATH
 
 # start mongod
-mkdir -p /scratch/jenkins/db
-mongod  --smallfiles --dbpath /scratch/jenkins/db --fork
+mkdir -p /scratch/jenkins/mongo/db
+mkdir -p /scratch/jenkins/mongo/log
+mongod  --smallfiles --dbpath /scratch/jenkins/db --logpath /scratch/jenkins/mongo/log --fork
 
