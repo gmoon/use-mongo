@@ -22,5 +22,5 @@ export PATH=/scratch/jenkins/mongo/${mongo_name}/bin:$PATH
 # start mongod
 mkdir -p /scratch/jenkins/mongo/db
 mkdir -p /scratch/jenkins/mongo/log
-mongod  --smallfiles --dbpath /scratch/jenkins/db --logpath /scratch/jenkins/mongo/log --fork
+mongod  --smallfiles --dbpath /scratch/jenkins/db --logpath /scratch/jenkins/mongo/log/mongod.log --fork
 
