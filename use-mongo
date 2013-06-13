@@ -1,0 +1,25 @@
+#!/bin/sh
+# To call this script:
+# wget -q https://repository-cloudbees.forge.cloudbees.com/distributions/ci-addons/node/use-node
+# MONGO_VERSION=0.7.8 . ./use-node
+if [[ -z $MONGO_VERSION ]]; then
+   echo "You must set the MONGO_VERSION environment variable. See http://docs.mongodb.org/manual/tutorial/install-mongodb-on-linux/"
+fi
+
+set -e
+
+mkdir -p /scratch/jenkins/mongo
+ARCH=`uname -m`
+
+mongo_name=mongodb-linux-${ARCH}-${MONGO_VERSION}
+
+test -f /scratch/jenkins/mongo/${mongo_name}.tgz ||  wget -q -P /scratch/jenkins/mongo http://downloads.mongodb.org/linux/${mongo_name}.tgz
+
+test -f /scratch/jenkins/mongo/${mongo_name}/bin/mongo || tar xzf /scratch/jenkins/mongo/${mongo_name}.tgz  -C /scratch/jenkins/mongo
+
+export PATH=/scratch/jenkins/mongo/${mongo_name}/bin:$PATH
+
+# start mongod
+mkdir -p /scratch/jenkins/db
+mongod  --smallfiles --dbpath /scratch/jenkins/db --fork
+
