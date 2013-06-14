@@ -21,7 +21,7 @@ NODE_VERSION=0.10.4 \
  source ./use-node
 
 # Install MongoDb
-curl -s -o use-mongo https://raw.github.com/gmoon/cloudbees-mongo/master/use-mongo
+curl -s -o use-mongo https://raw.github.com/gmoon/use-mongo/master/use-mongo
 MONGO_VERSION=2.4.4 \
  source ./use-mongo
 
