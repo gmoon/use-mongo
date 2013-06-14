@@ -1,4 +1,4 @@
-Cloudbees-Mongodb
+Cloudbees-MongoDB
 =================
 Inspired by: http://developer.cloudbees.com/bin/view/DEV/Node+Builds
 
