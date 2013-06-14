@@ -1,5 +1,5 @@
-Cloudbees-MongoDB
-=================
+use-mongo
+=========
 Inspired by: http://developer.cloudbees.com/bin/view/DEV/Node+Builds
 
 Synopsis
