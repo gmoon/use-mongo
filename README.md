@@ -2,26 +2,15 @@ Cloudbees-Mongodb
 =================
 Inspired by: http://developer.cloudbees.com/bin/view/DEV/Node+Builds
 
-I am using the excellent MongoDB in a project and decided to try using Cloudbees for 
-Continuous Integration.  Using Mocha, I had BDD going on my VM, but couldn't run it on
-Cloudbees because it required mongo.  Creating MockMongo was an option but the API is very extensive
-and would probably prove too difficult to maintain.  Plus, testing against the actual persistence layer
-has its advantages.
+Synopsis
+--------
+You have an app that depends on MongoDB.  So do your automated tests.  You want to run Continuous Integration
+and want to build on a clean system, perhaps using Cloudbees.  
 
-This script will install Mongo on the Cloudbees /scratch directory so it is available
-during your build process.  
-
-To incorporate it into the build, you run use-mongo first, and then you can start and stop mongo thusly:
-
+Here is my build script, which uses this project to install MongoDB, and a similar project to intall Node.js:
 ```
-mongod --smallfiles --dbpath /scratch/jenkins/db --logpath /scratch/jenkins/mongo/log/mongod.log --fork
-# invoke your build, I use grunt (for now)
-grunt
-mongod --shutdown --dbpath /scratch/jenkins/db
-```
+#!/bin/sh
 
-My current, complete build script is **build-cloudbees.sh**:
-```
 # Install Node.js
 curl -s -o use-node https://repository-cloudbees.forge.cloudbees.com/distributions/ci-addons/node/use-node
 NODE_VERSION=0.10.4 \
@@ -48,7 +37,7 @@ TODO
 
 LICENSE
 -------
-
+```
 Copyright 2013 George Moon
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,3 +51,4 @@ Copyright 2013 George Moon
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+```
