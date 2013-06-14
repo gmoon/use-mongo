@@ -4,10 +4,14 @@ Inspired by: http://developer.cloudbees.com/bin/view/DEV/Node+Builds
 
 Synopsis
 --------
+A simple build script to install MongoDB on your Jenkins slave.
+
+Description
+-----------
 You have an app that depends on MongoDB.  So do your automated tests.  You want to run Continuous Integration
 and want to build on a clean system, perhaps using Cloudbees.  
 
-Here is my build script, which uses this project to install MongoDB, and a similar project to intall Node.js:
+Here is a build script that uses this project to install MongoDB, and a similar project to intall Node.js:
 ```
 #!/bin/sh
 
