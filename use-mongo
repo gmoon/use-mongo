@@ -2,6 +2,8 @@
 # To call this script:
 # wget -q https://raw.github.com/gmoon/cloudbees-mongo/master/use-mongo
 # MONGO_VERSION=2.4.4 . ./use-mongo
+set -x verbose
+
 if [[ -z $MONGO_VERSION ]]; then
    echo "You must set the MONGO_VERSION environment variable. See http://docs.mongodb.org/manual/tutorial/install-mongodb-on-linux/"
 fi
