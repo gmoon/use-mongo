@@ -21,8 +21,4 @@ test -f /scratch/jenkins/mongo/${mongo_name}/bin/mongo || tar xzf /scratch/jenki
 
 export PATH=/scratch/jenkins/mongo/${mongo_name}/bin:$PATH
 
-# start mongod
-mkdir -p /scratch/jenkins/mongo/db
-mkdir -p /scratch/jenkins/mongo/log
-chmod 777 /scratch/jenkins/mongo/db
-chmod 777 /scratch/jenkins/mongo/log
+
