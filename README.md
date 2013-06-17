@@ -30,9 +30,12 @@ npm install grunt
 npm install grunt-cli
 export PATH=$PATH:node_modules/.bin/
 
-mongod --smallfiles --dbpath /scratch/jenkins/db --logpath /scratch/jenkins/mongo/log/mongod.log --fork
+mkdir -p ./mongo/log
+mkdir -p ./mongo/db
+
+mongod --smallfiles --dbpath ./mongo/db --logpath ./mongo/log/mongod.log --fork
 grunt
-mongod --shutdown --dbpath /scratch/jenkins/db
+mongod --shutdown --dbpath ./mongo/db
 ```
 
 TODO
