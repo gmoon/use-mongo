@@ -38,10 +38,6 @@ grunt
 mongod --shutdown --dbpath ./mongo/db
 ```
 
-TODO
-----
-* Perhaps it is best to delete the files after shutdown
-
 LICENSE
 -------
 ```
